@@ -6,8 +6,10 @@
     overflow: hidden;
 
     #section1 {
-        height: 300px;
+        height: 200px;
         position: relative;
+        align-content: center;
+        margin: 100px;
     }
 
     #container {
@@ -22,8 +24,34 @@
     }
 
     h1{
-        margin: 100px;
         color: #4b4b4d;
+    }
+
+    #cardHeader {
+        border-bottom: 1px solid #ccc;
+        margin-bottom: 20px;
+        margin-left: -16px;
+        margin-right: -16px;
+
+        .category {
+            margin-right: 14px;
+            color: #cacaca;
+            font-size: 17px;
+            line-height: 60px;
+            border-radius: 0px;
+            &.active {
+                color: #3746d7;
+                border-bottom: 2px solid #f39b86;
+            }
+        }
+    }
+
+    #content {
+        margin-top: 20px;
+
+        mat-card {
+            padding-top: 0px;
+        }
     }
 
     #section2 {
