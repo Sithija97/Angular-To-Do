@@ -35,7 +35,7 @@
 
         .category {
             margin-right: 14px;
-            color: #cacaca;
+            color: #e7e7e7;
             font-size: 17px;
             line-height: 60px;
             border-radius: 0px;
@@ -49,8 +49,25 @@
     #content {
         margin-top: 20px;
 
-        mat-card {
-            padding-top: 0px;
+        ::ng-deep {
+            mat-card {
+                padding-top: 0px;
+                min-height: 500px;
+                
+                mat-selection-list {
+                    .mat-list-item-content {
+                        flex-direction :row !important;
+
+                        mat-pseudo-checkbox {
+                            margin-right: 20px;
+
+                            &.mat-pseudo-checkbox-checked {
+                                background-color: #3746d7;
+                            } 
+                        }
+                    }
+                }
+            }
         }
     }
 
