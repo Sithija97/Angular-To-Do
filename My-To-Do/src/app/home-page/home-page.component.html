@@ -1,29 +1,45 @@
 <div id="section1">
-  <div id="conatiner">
+  <div id="container">
     <div id="header">
       <h1>My Tasks</h1>
-      <div id="actions"></div>
+
+      <div id="actions">
+        <!-- <button mat-icon-button ><mat-icon>search</mat-icon></button>
+          <button mat-icon-button ></button><mat-icon>delete</mat-icon></button> -->
+        <button
+          id="createTaskButton"
+          mat-raised-button
+          style="background-color: #3867d6; color: aliceblue;"
+        >
+          Create Task
+        </button>
+      </div>
     </div>
+
     <div id="content">
       <mat-card>
         <mat-card-content>
           <div id="cardHeader">
             <div id="categories">
-              <button class="category active" mat-button>Work</button>
-              <button class="category" mat-button>Personal</button>
+              <button class="category" mat-button>Work</button>
             </div>
             <div id="cardActions"></div>
           </div>
+          <div id="cardContent">
+            <mat-selection-list>
+              <mat-list-option>Meet Client</mat-list-option>
+              <mat-list-option>Following up meeting</mat-list-option>
+              <mat-list-option>Meet Client</mat-list-option>
+              <mat-list-option>Following up meeting</mat-list-option>
+              <mat-list-option>Meet Client</mat-list-option>
+              <mat-list-option>Following up meeting</mat-list-option>
+              <mat-list-option>Meet Client</mat-list-option>
+              <mat-list-option>Following up meeting</mat-list-option>
+              <mat-list-option>Meet Client</mat-list-option>
+              <mat-list-option>Following up meeting</mat-list-option>
+            </mat-selection-list>
+          </div>
         </mat-card-content>
-        <div id="cardContent">
-          <mat-selection-list>
-            <mat-list-option>Task 1</mat-list-option>
-            <mat-list-option>Task 2</mat-list-option>
-            <mat-list-option>Task 3</mat-list-option>
-            <mat-list-option>Task 4</mat-list-option>
-            <mat-list-option>Task 5</mat-list-option>
-          </mat-selection-list>
-        </div>
       </mat-card>
     </div>
   </div>

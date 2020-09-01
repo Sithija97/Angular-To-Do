@@ -1,78 +1,92 @@
+$blue: #3867d6;
 :host {
-    display: block;
-    width: 100%;
-    height: 100%;
-    background-color: #f6f7fd;
-    overflow: hidden;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #f6f7fd;
+  overflow: auto;
 
-    #section1 {
-        height: 200px;
-        position: relative;
-        align-content: center;
-        margin: 100px;
+  #section1 {
+    height: 400px;
+    position: relative;
+
+    #header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      #createTaskButton {
+        margin-left: 20px;
+      }
     }
 
     #container {
-        width: 80%;
-        margin: auto;
-        min-height: 400px;
-        margin-top: 0;
-        position: absolute;
-        top: 100px;
-        left: 0px;
-        right: 0px;
-    }
+      width: 80%;
+      margin: auto;
+      min-height: 400px;
+      margin-top: 0;
+      position: absolute;
+      top: 100px;
+      margin: auto;
+      left: 0px;
+      right: 0px;
 
-    h1{
+      h1 {
+        margin: 0px;
         color: #4b4b4d;
-    }
+      }
 
-    #cardHeader {
-        border-bottom: 1px solid #ccc;
-        margin-bottom: 20px;
+      #cardHeader {
         margin-left: -16px;
         margin-right: -16px;
+        border-bottom: 1px solid #ccc;
+        margin-bottom: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
 
         .category {
-            margin-right: 14px;
-            color: #e7e7e7;
-            font-size: 17px;
-            line-height: 60px;
-            border-radius: 0px;
-            &.active {
-                color: #3746d7;
-                border-bottom: 2px solid #f39b86;
-            }
+          margin-right: 14px;
+          font-weight: bold;
+          color: #e7e7e7;
+          font-size: 16px;
+          line-height: 50px;
+          border-bottom-right-radius: 0px;
+          border-bottom-left-radius: 0px;
+          &.active {
+            color: $blue;
+            border-bottom: 2px solid #f39b86;
+          }
         }
-    }
+      }
 
-    #content {
+      #content {
         margin-top: 20px;
-
         ::ng-deep {
-            mat-card {
-                padding-top: 0px;
-                min-height: 500px;
-                
-                mat-selection-list {
-                    .mat-list-item-content {
-                        flex-direction :row !important;
+          mat-card {
+            padding-top: 10px;
+            min-height: 500px;
 
-                        mat-pseudo-checkbox {
-                            margin-right: 20px;
+            mat-selection-list {
+              .mat-list-item-content {
+                // flex-direction: row !important;
 
-                            &.mat-pseudo-checkbox-checked {
-                                background-color: #3746d7;
-                            } 
-                        }
-                    }
+                mat-pseudo-checkbox {
+                  margin-right: 20px;
+
+                  &.mat-pseudo-checkbox-checked {
+                    background-color: blue;
+                  }
                 }
+              }
             }
+          }
         }
+      }
     }
+  }
 
-    #section2 {
-        height: 700px;
-        background-image: linear-gradient(#81a7f9 , #aaf2f9);
-    }
+  #section2 {
+    height: 800px;
+    background-image: linear-gradient(#81a7f9, #5dcdd8);
+  }
 }
