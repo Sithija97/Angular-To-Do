@@ -21,7 +21,11 @@
         <mat-card-content>
           <div id="cardHeader">
             <div id="categories">
-              <button class="category" mat-button>Work</button>
+              <button class="category" 
+              *ngFor="let category of categories"
+              [ngClass] = "{'active ': category.active}"
+              (click)="openCategory(category)"
+              mat-button>{{category.title}}</button>
             </div>
             <div id="cardActions"></div>
           </div>
