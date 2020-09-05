@@ -12,6 +12,8 @@ export class HomePageComponent implements OnInit {
     {title:'Work', active:false}
   ]
 
+  selectedTasks = [];
+
   constructor() { }
 
   ngOnInit() {
@@ -31,5 +33,8 @@ export class HomePageComponent implements OnInit {
     })
   }
 
+  taskSelected(event) {
+    console.log("Task:"+ event);
+  }
 
 }

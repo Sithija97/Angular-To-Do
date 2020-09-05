@@ -4,8 +4,8 @@
       <h1>My Tasks</h1>
 
       <div id="actions">
-        <!-- <button mat-icon-button ><mat-icon>search</mat-icon></button>
-          <button mat-icon-button ></button><mat-icon>delete</mat-icon></button> -->
+        <button mat-icon-button ><mat-icon>search</mat-icon></button>
+        <button mat-icon-button [disabled]="selectedTasks.length < 1" ><mat-icon>delete</mat-icon></button>
         <button
           id="createTaskButton"
           mat-raised-button
@@ -30,7 +30,7 @@
             <div id="cardActions"></div>
           </div>
           <div id="cardContent">
-            <mat-selection-list>
+            <mat-selection-list [(ngModel)]="selectedTasks">
               <mat-list-option>Meet Client</mat-list-option>
               <mat-list-option>Following up meeting</mat-list-option>
               <mat-list-option>Meet Client</mat-list-option>

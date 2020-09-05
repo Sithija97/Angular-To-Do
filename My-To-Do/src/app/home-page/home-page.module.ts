@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HomePageComponent } from './home-page.component';
 import { HomePageRoutingModule } from './home-page-routing-module';
 import { MatCardModule, MatButtonModule, MatListModule, MatIconModule, MatTooltipModule } from '@angular/material';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -12,7 +13,8 @@ import { MatCardModule, MatButtonModule, MatListModule, MatIconModule, MatToolti
     MatListModule,
     MatIconModule,
     MatTooltipModule,
-    HomePageRoutingModule
+    HomePageRoutingModule,
+    FormsModule
   ],
   declarations: [HomePageComponent]
 })
