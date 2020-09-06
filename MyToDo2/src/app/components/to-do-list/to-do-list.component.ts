@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ToDoListComponent implements OnInit {
 
+  todoList: string[] = ['buy vegetables', 'finish paintings', 'study programming', 'play ludo',];
+
   constructor() { }
 
   ngOnInit() {

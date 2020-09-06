@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+.mainContainer {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  margin-top: 50px;
+}
+
+.headerText {
+  font-family: 'Fredoka One', cursive;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 600px;
+  width: 100%;
+  align-content: center;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.deleteBtn {
+    margin-left: 570px;
+}
