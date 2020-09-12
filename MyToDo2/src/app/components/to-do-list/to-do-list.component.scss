@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+body {
+  background-color: #ff1744;
+  margin: 0px;
+}
+
+h1 {
+  margin-block-start: 0em !important;
+  margin-block-end: 0em !important;
+  text-align: center;
+  padding: 10px;
+}
+
+.mainContainer {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  // margin-top: 50px;
+  padding: 20px;
+  border-radius: 10px;
+  //background-color: #ffffff;
+  background-color: #f8f6fa;
+}
+
+.headerText {
+  font-family: 'Roboto', sans-serif;
+  color: #f8f6fa;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 600px;
+  width: 100%;
+  align-content: center;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.deleteBtn {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  margin-left: 525px;
+}
+
+::ng-deep {
+  .mat-list-base .mat-list-item .mat-list-text>*, .mat-list-base .mat-list-option .mat-list-text>* {
+    padding: 8px !important;
+  }
+} 
+
