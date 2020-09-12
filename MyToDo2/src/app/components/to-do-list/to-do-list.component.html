@@ -1,17 +1,25 @@
-<div class="mainContainer">
+<body>
   <h1 class="headerText">My To ~ Do App</h1>
-  <form class="example-form">
-    <mat-form-field class="example-full-width">
-      <mat-label>Add To-Dos</mat-label>
-      <textarea matInput placeholder="Ex. study economics"></textarea>
-    </mat-form-field>
-  </form>
-  <mat-selection-list #todos>
-    <mat-list-option *ngFor="let todo of todoList">
-      {{ todo }}
-    </mat-list-option>
-  </mat-selection-list>
-
-  <p>Options selected: {{ todos.selectedOptions.selected.length }}</p>
-  <button class="deleteBtn" mat-icon-button><mat-icon matTooltip="Info about the action">delete</mat-icon></button>
-</div>
+  <mat-card class="mainContainer">
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <mat-label>Add To-Dos</mat-label>
+        <textarea matInput placeholder="Ex. study economics"></textarea>
+      </mat-form-field>
+    </form>
+    <mat-selection-list #todos>
+      <mat-list-option *ngFor="let todo of todoList">{{ todo }} </mat-list-option>
+    </mat-selection-list>
+  
+    <p>Options selected: {{ todos.selectedOptions.selected.length }}</p>
+    <div class="deleteBtn">
+      <button mat-icon-button>
+        <mat-icon >create</mat-icon>
+      </button>
+      <button mat-icon-button>
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </mat-card>
+  
+</body>
