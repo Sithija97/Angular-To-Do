@@ -13,7 +13,7 @@ export class TestComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.todoName = "Sithija Shehara";
+    this.todoName = "";
     this.todos = [
       {
         'id':1,

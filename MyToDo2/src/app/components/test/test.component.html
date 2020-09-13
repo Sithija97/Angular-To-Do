@@ -8,6 +8,9 @@
 
 <div class="mainContent">
   <div class="col-md-8">
+    <div class="textInput">
+      <input type="text" class="form-control" id="exampleInput" placeholder="Add To-Dos" [(ngModel)]="todoName">
+    </div>
     <div class="card-hover-shadow-2x mb-3 card">
       <div class="card-header-tab card-header">
         <div
@@ -16,13 +19,15 @@
           <i class="fa fa-tasks"></i>&nbsp;Task Lists
         </div>
       </div>
+
       <div class="scroll-area-sm">
         <perfect-scrollbar class="ps-show-limits">
           <div style="position: static" class="ps ps--active-y">
             <div class="ps-content">
               <ul class="list-group list-group-flush">
                 <li class="list-group-item" *ngFor="let todo of todos">
-                  <div class="todo-indicator bg-warning"></div> <!--indicator thing-->
+                  <div class="todo-indicator bg-warning"></div>
+                  <!--indicator thing-->
                   <div class="widget-content p-0">
                     <div class="widget-content-wrapper">
                       <div class="widget-content-left mr-2">
@@ -40,7 +45,7 @@
                       </div>
                       <div class="widget-content-left">
                         <div class="widget-heading">
-                          {{todo.name}}
+                          {{ todo.name }}
                           <!-- <div class="badge badge-danger ml-2">Rejected</div> -->
                         </div>
                         <!-- <div class="widget-subheading"><i>By Bob</i></div> -->
