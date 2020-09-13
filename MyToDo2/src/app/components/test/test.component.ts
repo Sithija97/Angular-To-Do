@@ -7,9 +7,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TestComponent implements OnInit {
 
+  todoName : string;
+  todos : object [] = [];
+
   constructor() { }
 
   ngOnInit() {
+    this.todoName = "Sithija Shehara";
+    this.todos = [
+      {
+        'id':1,
+        'name': 'Study Angualr',
+        'completed': false,
+        'editing': false
+      },
+      {
+        'id':2,
+        'name': 'Do Painting',
+        'completed': false,
+        'editing': false
+      },
+      {
+        'id':3,
+        'name': 'Buy Vegetables',
+        'completed': false,
+        'editing': false
+      }
+    ]
   }
 
 }
