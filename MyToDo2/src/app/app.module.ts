@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
@@ -18,7 +19,8 @@ import { TestComponent } from './components/test/test.component';
   declarations: [
     AppComponent,
     ToDoListComponent,
-    TestComponent
+    TestComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -30,7 +32,8 @@ import { TestComponent } from './components/test/test.component';
     MatListModule,
     MatIconModule,
     MatTooltipModule,
-    MatCardModule
+    MatCardModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
