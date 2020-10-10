@@ -1,17 +1,22 @@
-<div class="row d-flex justify-content-center container" style="margin-left: 175px">
-    <div class="col-md-8">
-        <div class="card-hover-shadow-2x mb-3 card">
-            <div class="card-header-tab card-header">
-                <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
-                    <i class="fa fa-tasks"></i>&nbsp;Task Lists
-                </div>
-            </div>
-            <div class="scroll-area-sm">
-                <!-- <perfect-scrollbar class="ps-show-limits"> -->
-                <div style="position: static" class="ps ps--active-y">
-                    <div class="ps-content">
-                        <ul class="list-group list-group-flush">
-                            <!-- <li class="list-group-item">
+<div
+  class="row d-flex justify-content-center container"
+  style="margin-left: 175px"
+>
+  <div class="col-md-8">
+    <div class="card-hover-shadow-2x mb-3 card">
+      <div class="card-header-tab card-header">
+        <div
+          class="card-header-title font-size-lg text-capitalize font-weight-normal"
+        >
+          <i class="fa fa-tasks"></i>&nbsp;Task Lists
+        </div>
+      </div>
+      <div class="scroll-area-sm">
+        <!-- <perfect-scrollbar class="ps-show-limits"> -->
+        <div style="position: static" class="ps ps--active-y">
+          <div class="ps-content">
+            <ul class="list-group list-group-flush">
+              <!-- <li class="list-group-item">
                                   <div class="todo-indicator bg-warning"></div>
                                   <div class="widget-content p-0">
                                       <div class="widget-content-wrapper">
@@ -27,7 +32,7 @@
                                       </div>
                                   </div>
                               </li> -->
-                            <!-- <li class="list-group-item">
+              <!-- <li class="list-group-item">
                                   <div class="todo-indicator bg-focus"></div>
                                   <div class="widget-content p-0">
                                       <div class="widget-content-wrapper">
@@ -45,7 +50,7 @@
                                       </div>
                                   </div>
                               </li> -->
-                            <!-- <li class="list-group-item">
+              <!-- <li class="list-group-item">
                                   <div class="todo-indicator bg-primary"></div>
                                   <div class="widget-content p-0">
                                       <div class="widget-content-wrapper">
@@ -60,30 +65,48 @@
                                       </div>
                                   </div>
                               </li> -->
-                            <li class="list-group-item" *ngFor="let todo of todos">
-                                <div class="todo-indicator bg-info"></div>
-                                <div class="widget-content p-0">
-                                    <div class="widget-content-wrapper">
-                                        <div class="widget-content-left mr-2">
-                                            <!-- <div class="custom-checkbox custom-control"><input class="custom-control-input" type="checkbox"><label class="custom-control-label" for="exampleCustomCheckbox2">&nbsp;</label></div> -->
-                                            <div class="custom-checkbox custom-control">
-                                                <input type="checkbox" class="form-check-input" />
-                                            </div>
-                                        </div>
-                                        <div class="widget-content-left">
-                                            <div class="widget-heading">{{ todo.title }}</div>
-                                            <div class="widget-subheading">By Tida & id: {{todo.id}}</div>
-                                        </div>
-                                        <div class="widget-content-right ml-1"></div>
-                                        <div class="widget-content-right">
-                                            <div class="remove-item" (click)="deleteToDo(todo.id)">
-                                                &times;
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- <li class="list-group-item">
+              <li class="list-group-item" *ngFor="let todo of todos">
+                <div class="todo-indicator bg-info"></div>
+                <div class="widget-content p-0">
+                  <div class="widget-content-wrapper">
+                    <div class="widget-content-left mr-2">
+                      <!-- <div class="custom-checkbox custom-control"><input class="custom-control-input" type="checkbox"><label class="custom-control-label" for="exampleCustomCheckbox2">&nbsp;</label></div> -->
+                      <div class="custom-checkbox custom-control">
+                        <input type="checkbox" class="form-check-input" />
+                      </div>
+                    </div>
+                    <div class="widget-content-left">
+                      <div
+                        class="widget-heading"
+                        (dblclick)="editToDo(todo)"
+                        *ngIf="!todo.edited; else editedTodo"
+                      >
+                        {{ todo.title }}
+                      </div>
+                      <div class="widget-subheading">
+                        By Tida & id: {{ todo.id }}
+                      </div>
+                      <ng-template #editedTodo>
+                        <input
+                          type="text"
+                          class="form-control"
+                          [(ngModel)]="todo.title"
+                          ng-blur="doneEdit(todo)"
+                          (keyup.enter)="doneEdit(todo)"
+                        />
+                      </ng-template>  
+                    </div>
+
+                    <div class="widget-content-right ml-1"></div>
+                    <div class="widget-content-right">
+                      <div class="remove-item" (click)="deleteToDo(todo.id)">
+                        &times;
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <!-- <li class="list-group-item">
                                   <div class="todo-indicator bg-success"></div>
                                   <div class="widget-content p-0">
                                       <div class="widget-content-wrapper">
@@ -98,7 +121,7 @@
                                       </div>
                                   </div>
                               </li> -->
-                            <!-- <li class="list-group-item">
+              <!-- <li class="list-group-item">
                                   <div class="todo-indicator bg-success"></div>
                                   <div class="widget-content p-0">
                                       <div class="widget-content-wrapper">
@@ -113,15 +136,20 @@
                                       </div>
                                   </div>
                               </li> -->
-                        </ul>
-                    </div>
-                </div>
-                <!-- </perfect-scrollbar> -->
-            </div>
-            <div class="d-block text-right card-footer" style="display: flex">
-                <input type="text" class="form-control" placeholder="Add todos" [(ngModel)]="todoTitle"
-                    (keyup.enter)="addToDo()" /><button class="btn btn-primary" (click)="addToDo()">Add Task</button>
-            </div>
+            </ul>
+          </div>
         </div>
+        <!-- </perfect-scrollbar> -->
+      </div>
+      <div class="d-block text-right card-footer" style="display: flex">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Add todos"
+          [(ngModel)]="todoTitle"
+          (keyup.enter)="addToDo()"
+        /><button class="btn btn-primary" (click)="addToDo()">Add Task</button>
+      </div>
     </div>
+  </div>
 </div>

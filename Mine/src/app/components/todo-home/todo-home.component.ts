@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Todo } from '../../interfaces/todo-interface';
 
 @Component({
   selector: 'app-todo-home',
@@ -29,18 +30,23 @@ export class TodoHomeComponent implements OnInit {
     this.todos.push({
       'id': this.todoId,
       'title': this.todoTitle,
+      'completed': false,
+      'edited':false
     })
 
     this.todoTitle="";
     this.todoId++;
   }
 
+  editToDo(todo: Todo): void {
+    todo.edited = true; 
+  }
+
+  doneEdit(todo: Todo) {
+    todo.edited = false; 
+  }
+
   deleteToDo(id:number): void {
     this.todos = this.todos.filter(todo => todo.id !== id);
   }
-}
-
-interface Todo {
-  id: number,
-  title: String
 }
