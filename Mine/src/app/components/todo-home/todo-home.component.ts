@@ -9,28 +9,34 @@ export class TodoHomeComponent implements OnInit {
 
   todos : object[];
   todoTitle : String;
+  todoId : number;
+
   constructor() { }
 
   ngOnInit() {
 
+    this.todoId = 1;
     this.todoTitle = " ";
 
     this.todos = [
       {
-        'title':'Learn mean'
+        'id' : '',
+        'title':''
       },
-      {
-        'title':'Learn mern'
-      },
-      {
-        'title':'Do Meditation'
-      }
     ]
   }
 
-  addToDo() {
+  addToDo(): void {
+    if(this.todoTitle.trim().length === 0) {
+      return;
+    }
+
     this.todos.push({
-      'title': this.todoTitle
+      'id': this.todoId,
+      'title': this.todoTitle,
     })
+
+    this.todoTitle="";
+    this.todoId++;
   }
 }
