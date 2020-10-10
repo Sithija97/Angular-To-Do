@@ -169,3 +169,11 @@ i {
 .card-footer {
     background-color: #fff
 }
+
+.remove-item {
+    cursor: pointer;
+    margin-left: 14px;
+    &:hover {
+      color: black;
+    }
+  }

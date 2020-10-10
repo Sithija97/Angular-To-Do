@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodoHomeComponent implements OnInit {
 
-  todos : object[];
+  todos : Todo[];
   todoTitle : String;
   todoId : number;
 
@@ -18,12 +18,7 @@ export class TodoHomeComponent implements OnInit {
     this.todoId = 1;
     this.todoTitle = " ";
 
-    this.todos = [
-      {
-        'id' : '',
-        'title':''
-      },
-    ]
+    this.todos = []
   }
 
   addToDo(): void {
@@ -39,4 +34,13 @@ export class TodoHomeComponent implements OnInit {
     this.todoTitle="";
     this.todoId++;
   }
+
+  deleteToDo(id:number): void {
+    this.todos = this.todos.filter(todo => todo.id !== id);
+  }
+}
+
+interface Todo {
+  id: number,
+  title: String
 }
