@@ -1,13 +1,14 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const ListSchema = new mongoose.Schema({
-    title:{
-        type: String,
-        required: true,
-        minlength: 1,
-        trim: true
-    }
-})
+  title: {
+    type: String,
+    trim: true,
+    minlength: 3,
+  },
+});
 
-const List = mongoose.Model('List', ListSchema);
-module.exports = { List }
+const List = mongoose.model("List", ListSchema);
+
+module.exports = List;
+    

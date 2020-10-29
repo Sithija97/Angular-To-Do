@@ -1,15 +1,15 @@
-const express = require('express');
+const express = require("express");
 const app = express();
-const cors = require('cors')
-const router = require('./routes/router')
-const mongoose = require("../database/mongoose");
+const cors = require("cors");
 
 app.use(express.json()); /*map json*/
 app.use(cors()); /*identify different ports*/
 
-/* Route Handler */
+const router = require("./routes/router");
+
+/* Routes */
 app.use("/api", router);
 
-app.listen(3000, ()=>{
-    console.log("Server is listening on port 3000");
-})
+app.listen(3000, () => {
+  console.log("Server connected to port 3000");
+});
