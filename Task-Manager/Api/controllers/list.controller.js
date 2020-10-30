@@ -1,6 +1,4 @@
-const mongoose = require("../db/mongoose");
 const List = require("../db/models/list.model");
-
 
 // ReadAll
 // app.get("/list", (req, res) => {

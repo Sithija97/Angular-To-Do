@@ -2,6 +2,8 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 
+const mongoose = require("../Api/db/mongoose");
+
 app.use(express.json()); /*map json*/
 app.use(cors()); /*identify different ports*/
 
