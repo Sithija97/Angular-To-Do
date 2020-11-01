@@ -4,7 +4,7 @@ const cors = require("cors");
 
 const mongoose = require("../Api/db/mongoose");
 
-app.use(express.json()); /*map json*/
+app.use(express.json()); /*map json => instead od bodyParser*/
 app.use(cors()); /*identify different ports*/
 
 const router = require("./routes/router");

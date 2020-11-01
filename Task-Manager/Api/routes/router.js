@@ -12,5 +12,6 @@ router.delete("/list/:listId", listControler.delete);
 
 router.get('/list/:listId/tasks',taskController.readall);
 router.post('/list/:listId/tasks', taskController.createtask);
-
+router.patch('/list/:listId/tasks/:taskId',taskController.updatetask)
+router.delete('/list/:listId/tasks/:taskId',taskController.deletetask)
 module.exports = router;
