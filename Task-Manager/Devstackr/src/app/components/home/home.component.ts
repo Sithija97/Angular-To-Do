@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TasksService } from 'src/app/service/tasks.service';
+import { ListService } from 'src/app/service/list.service';
 
 @Component({
   selector: 'app-home',
@@ -8,15 +9,9 @@ import { TasksService } from 'src/app/service/tasks.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private taskService: TasksService) { }
+  constructor() { }
 
   ngOnInit() {
-  }
-
-  createNewList(title: String) {
-    this.taskService.createList('Testing').subscribe((respose: any)=>{
-      console.log(respose);
-    })
   }
 
 }
