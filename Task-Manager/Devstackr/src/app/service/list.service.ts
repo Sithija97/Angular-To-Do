@@ -12,4 +12,8 @@ export class ListService {
     return this.webRequestService.post("list", { title });
   }
 
+  getList(){
+    return this.webRequestService.get("list");
+  }
+
 }

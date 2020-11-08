@@ -3,10 +3,10 @@
     <h3 class="title">
       Create New List
     </h3>
-    <input class="input has-background-light" type="text" placeholder="Find a repository"> <br><br>
+    <input #listTitileInput class="input has-background-light" type="text" placeholder="Enter list name.."> <br><br>
     <div class="buttons is-right">
       <button class="button" routerLink="/">Go back</button>
-      <button class="button is-info" (click)="createNewList()">Create</button>
+      <button class="button is-info" (click)="createNewList(listTitileInput.value)">Create</button>
     </div>
   </div>
 </div>

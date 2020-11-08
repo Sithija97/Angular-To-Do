@@ -14,8 +14,9 @@ export class NewListComponent implements OnInit {
   }
   
   createNewList(title: String) {
-    this.listService.createList('Testing').subscribe((respose: any)=>{
+    this.listService.createList(title).subscribe((respose: any)=>{
       console.log(respose);
+      //navigate to /lists/response._id
     })
   }
 }
