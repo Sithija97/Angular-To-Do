@@ -1,6 +1,4 @@
-const mongoose = require("../db/mongoose");
 const List = require("../db/models/list.model");
-
 
 // ReadAll
 // app.get("/list", (req, res) => {
@@ -46,9 +44,15 @@ module.exports.readone = (req, res) => {
 //Update
 //  app.patch("/list/:listId", (req, res) => {
 module.exports.update = (req, res) => {
-  List.findByIdAndUpdate({
-    _id: req.params.listId,
-  })
+  List.findByIdAndUpdate(
+    {
+      _id: req.params.listId,
+    },
+    {
+      $set: req.body,
+      //title:req.body.title
+    }
+  )
     .then((lists) => {
       res.send("updated " + lists);
       console.log("list updated successfullt");
