@@ -1,4 +1,4 @@
-export class  List {
-    _id: String;
-    title: String
+export class List {
+  _id: String;
+  title: String;
 }
