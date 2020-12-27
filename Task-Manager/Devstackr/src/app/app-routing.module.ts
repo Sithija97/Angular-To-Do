@@ -2,11 +2,12 @@ import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { HomeComponent } from "./components/home/home.component";
 import { NewListComponent } from "./components/new-list/new-list.component";
+import { NewTaskComponent } from './components/new-task/new-task.component';
 
 const routes: Routes = [
   {
     path: "",
-    redirectTo: "lists",
+    redirectTo: "/lists",
     pathMatch: "full",
   },
   {
@@ -20,6 +21,10 @@ const routes: Routes = [
   {
     path: "lists/:listId",
     component: HomeComponent,
+  },
+  {
+    path: "lists/:listId/newtask",
+    component: NewTaskComponent,
   },
 ];
 
