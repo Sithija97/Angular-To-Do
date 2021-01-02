@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { HomeComponent } from "./components/home/home.component";
+import { LoginPageComponent } from "./components/login-page/login-page.component";
 import { NewListComponent } from "./components/new-list/new-list.component";
 import { NewTaskComponent } from './components/new-task/new-task.component';
 
@@ -26,6 +27,10 @@ const routes: Routes = [
     path: "lists/:listId/newtask",
     component: NewTaskComponent,
   },
+  {
+    path: "login-Page",
+    component: LoginPageComponent
+  }
 ];
 
 @NgModule({

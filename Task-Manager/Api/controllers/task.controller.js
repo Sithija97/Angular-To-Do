@@ -39,8 +39,8 @@ module.exports.updatetask = (req,res) => {
         $set: req.body
         //title:req.body.title
     })
-    .then((tasks) => {
-        res.send("updated " + tasks);
+    .then(() => {
+        res.send({message: 'Updated Successfully'});
         console.log("task updated successfully");
       })
       .catch((err) => {
